@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import pairwise_distances
+from pathlib import Path
 
 # -------------------------------
 # Page Configuration
