@@ -24,8 +24,8 @@ import os
 
 BASE_DIR = Path(__file__).parent
 
-st.write("Current working directory:", os.getcwd())
-st.write("Files in app folder:", os.listdir(BASE_DIR))
+# st.write("Current working directory:", os.getcwd())
+# st.write("Files in app folder:", os.listdir(BASE_DIR))
 
 df = pd.read_csv(BASE_DIR / "slim enc mg.csv")
 # -------------------------------
