@@ -1,8 +1,13 @@
-# 🧠 Migraine Forecasting System
+# 🧠 AURANET: A Personalized Migraine Forecasting System with Multi-Feature Symptom Analysis
 
-A Python-based healthcare analytics project that predicts migraine severity using patient symptoms, aura indicators, and lifestyle factors. The system calculates severity scores, compares user profiles with historical migraine data, visualizes results, and provides personalized lifestyle recommendations.
+AURANET is a Python and Streamlit-based healthcare analytics application that predicts migraine severity using patient symptoms, aura indicators, and lifestyle factors. The system calculates multiple severity scores, compares patient profiles with historical migraine records using similarity analysis, visualizes actual versus predicted results, and provides personalized lifestyle recommendations.
 
 ## 🚀 Features
+
+### 👥 Multi-User Patient Analysis
+- Analyze up to 20 users simultaneously
+- Individual patient data entry
+- Separate prediction results for each user
 
 ### 📋 Patient Data Collection
 - Age
@@ -15,8 +20,8 @@ A Python-based healthcare analytics project that predicts migraine severity usin
 ### 🩺 Symptom Assessment
 - Nausea
 - Vomiting
-- Photophobia (light sensitivity)
-- Phonophobia (sound sensitivity)
+- Photophobia (Light Sensitivity)
+- Phonophobia (Sound Sensitivity)
 
 ### 🌈 Aura Symptom Analysis
 - Visual disturbances
@@ -31,38 +36,58 @@ A Python-based healthcare analytics project that predicts migraine severity usin
 - Ataxia
 - Altered consciousness
 - Paresthesia
+- Post-migraine fatigue
 
-### 🏃 Lifestyle Analysis
+### 🌿 Lifestyle Analysis
 - Sleep duration
+- Daily hydration
 - Physical activity
 - Sunlight exposure
-- Daily hydration
 
 ### 📊 Severity Prediction
+The system computes:
+
 - Migraine Severity Score (MSS)
 - Aura Severity Score (ASS)
 - Overall Severity Index (OSI)
 
-### 🔍 Dataset Matching
-- Exact record matching
-- Nearest-neighbor similarity matching
+### 🔍 Dataset Similarity Analysis
+- Nearest-neighbor patient matching using Scikit-Learn
+- Comparison with the most similar historical patient
+- Actual vs Predicted score comparison
 
-### 📈 Data Visualization
-- MSS comparison graphs
-- ASS comparison graphs
-- OSI comparison graphs
-- Prediction analysis plots
+### 📈 Interactive Visualizations
+- Actual vs Predicted MSS graph
+- Actual vs Predicted ASS graph
+- Actual vs Predicted OSI graph
+- Multi-user comparison charts
 
-### 💡 Personalized Recommendations
+### 💡 Personalized Lifestyle Recommendations
+Recommendations are automatically generated based on predicted severity, including:
+
 - Sleep improvement guidance
 - Hydration recommendations
 - Physical activity suggestions
-- Stress management advice
-- Severe migraine alerts
+- Sunlight exposure advice
+- Screen-time reduction
+- Stress management techniques
+- Migraine diary recommendations
+- Medical consultation alerts for severe cases
+
+## 🌐 Web Application
+
+The project includes a fully functional Streamlit web application featuring:
+
+- Clean and interactive user interface
+- Multi-user prediction support
+- Real-time severity prediction
+- Interactive comparison graphs
+- Personalized recommendation engine
 
 ## 🛠️ Technologies Used
 
 - Python
+- Streamlit
 - Pandas
 - NumPy
 - Matplotlib
@@ -73,12 +98,11 @@ A Python-based healthcare analytics project that predicts migraine severity usin
 ```text
 Migraine-forecasting-system/
 │
-├── migraine model.ipynb
-├── slim enc mg.csv
-├── README.md
-│
-├── .ipynb_checkpoints/
-└── .virtual_documents/
+└── Migraine_Prediction_App/
+    ├── app.py
+    ├── slim enc mg.csv
+    ├── requirements.txt
+    └── README.md
 ```
 
 ## ⚙️ How It Works
@@ -86,18 +110,19 @@ Migraine-forecasting-system/
 1. Load the migraine dataset.
 2. Collect patient symptom and lifestyle information.
 3. Calculate MSS, ASS, and OSI scores.
-4. Compare the patient profile with historical dataset records.
-5. Classify migraine severity.
-6. Generate visual analytics.
-7. Provide personalized lifestyle recommendations.
+4. Find the most similar patient in the dataset using nearest-neighbor similarity.
+5. Compare predicted scores with historical dataset values.
+6. Classify migraine severity.
+7. Generate comparison graphs.
+8. Provide personalized lifestyle recommendations.
 
 ## ⚠️ Severity Classification
 
 | OSI Range | Severity |
 |-----------|-----------|
-| < 1.5 | Normal |
-| 1.5 - 2.5 | Medium |
-| > 2.5 | Severe |
+| < 1.5 | 🟢 Normal |
+| 1.5 – 2.5 | 🟡 Medium |
+| > 2.5 | 🔴 Severe |
 
 ## ▶️ Installation
 
@@ -105,64 +130,73 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Sanjeev-Karnatapu/Migraine-forecasting-system.git
-cd Migraine-forecasting-system
+cd Migraine-forecasting-system/Migraine_Prediction_App
 ```
 
 Install dependencies:
 
 ```bash
-pip install pandas numpy matplotlib scikit-learn
+pip install -r requirements.txt
 ```
 
-## ▶️ Run the Project
+## ▶️ Run the Application
 
-For Jupyter Notebook:
+Launch the Streamlit app:
 
 ```bash
-jupyter notebook
+streamlit run app.py
 ```
 
-Open:
-
-```text
-migraine model.ipynb
-```
+The application will open automatically in your default web browser.
 
 ## 📊 Output
 
-The system provides:
+The application provides:
 
 - Migraine Severity Score (MSS)
 - Aura Severity Score (ASS)
 - Overall Severity Index (OSI)
-- Severity Classification
+- Migraine Severity Classification
+- Actual vs Predicted Score Comparison
 - Dataset Similarity Analysis
 - Personalized Lifestyle Recommendations
-- Graphical Visualizations
+- Interactive Multi-User Graphs
 
 ## 🔮 Future Enhancements
 
 - Machine Learning-based severity prediction
-- Streamlit web application
-- Migraine risk forecasting
+- Deep Learning models for improved accuracy
 - PDF report generation
-- Real-time monitoring dashboard
+- User authentication system
+- Database integration
+- Cloud deployment enhancements
 - Wearable device integration
+- Real-time migraine monitoring
+- Predictive migraine attack forecasting
 
 ## 🎯 Applications
 
 - Migraine severity assessment
-- Healthcare decision support
+- Clinical decision support
 - Patient self-monitoring
 - Lifestyle risk analysis
 - Medical research assistance
+- Healthcare analytics
+- Educational healthcare demonstrations
+
+## 🌐 Live Demo
+
+**Streamlit Application:**  
+*https://migraine-forecasting-system-qih77m4z35pasmtpomeqnb.streamlit.app/*
 
 ## ⚠️ Disclaimer
 
-This project is intended for educational and research purposes only. It is not a substitute for professional medical diagnosis or treatment. Always consult a qualified healthcare professional regarding migraine-related concerns.
+This project is intended solely for educational and research purposes. The predictions and recommendations generated by AURANET should not be considered a substitute for professional medical diagnosis, treatment, or clinical judgment. Users experiencing migraine-related symptoms should consult a qualified healthcare professional.
 
 ## 👨‍💻 Author
 
 **Sanjeev Karnatapu**
 
-Computer Science Engineering | Artificial Intelligence and Machine Learning | VIT Vellore
+B.Tech Computer Science Engineering (Artificial Intelligence and Machine Learning)
+
+Vellore Institute of Technology (VIT), Vellore
